@@ -1,0 +1,29 @@
+#menu-sistema {
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2);
+    z-index: 10;
+    background-color: #548A6F;
+}
+
+.btn-menu {
+    background-color: #4b7c63;
+    border-color: #3b624f;
+    color: var(--white);
+    font-weight: bold;
+}
+
+.sidebar-light .sidebar .nav .nav-item.active > .nav-link {
+    color: var(--primary);
+}
+
+::ng-deep .sidebar-light .sidebar .nav .nav-item.active > .nav-link i {
+    color: var(--primary) !important;
+}
+
+.sidebar > .nav > .nav-item > .collapse > .sub-menu > .nav-item .nav-link.active {
+    color: var(--primary) !important;
+}
+.sidebar > .nav > .nav-item > div {
+    background: var(--secondary);
+}

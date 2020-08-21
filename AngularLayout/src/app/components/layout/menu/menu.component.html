@@ -1,0 +1,22 @@
+<nav class="sidebar sidebar-offcanvas sidebar-dark" id="sidebar">
+    <ul class="nav">
+        <li *ngFor="let item of itens; let i = index" (mouseenter)="mouseEnterLi($event)" (mouseleave)="mouseLeaveLi($event)" class="nav-item" routerLinkActive="active">
+            <a *ngIf="!item.sub" class="nav-link" [routerLink]="item.router">
+                <i class="menu-icon icon-{{item.icon}}"></i>
+                <span class="menu-title">{{item.title}}</span>
+            </a>
+            <a *ngIf="item.sub" class="nav-link" data-toggle="collapse" href="#sub{{i}}">
+                <i class="menu-icon icon-{{item.icon}}"></i>
+                <span class="menu-title">{{item.title}}</span>
+            </a>
+            <div *ngIf="item.sub" class="collapse" id="sub{{i}}">
+                <ul class="nav flex-column sub-menu">
+                    <li *ngFor="let sub of item.sub;" class="nav-item">
+                        <a *ngIf="rota == sub.router" class="nav-link active" [routerLink]="sub.router">{{sub.title}}</a>
+                        <a *ngIf="rota != sub.router" class="nav-link" [routerLink]="sub.router">{{sub.title}}</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</nav>

@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Formulário </h4>
+                <p class="card-description">
+                    Preencha o formulário
+                </p>
+                <form class="forms-sample" (ngSubmit)="onSubmit()" novalidate [formGroup]="formulario">
+                    <div class="form-group">
+                        <label>Select com busca</label>
+                        <app-select-search #ngSelect [multiple]="true" [itens]="itensSelect">
+                        </app-select-search>
+                    </div>
+                    <button type="submit" class="btn btn-success mr-2">Submit</button>
+                    <button class="btn btn-light">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Resultado </h4>
+                <pre>{{ resultadoTela | json }}</pre>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,75 @@
+::ng-deep .simple-notification-wrapper {
+    z-index: 9999 !important;
+    font-family: arial,sans-serif !important;
+}
+
+::ng-deep .simple-notification.has-icon .sn-title {
+    font-size: 14px !important;
+    font-weight: bold;
+    opacity: 0.9;
+    filter: alpha(opacity=90);
+}
+
+::ng-deep .simple-notification .sn-content {
+    font-size: 12px !important;
+    opacity: 0.9;
+    filter: alpha(opacity=90);
+}
+
+::ng-deep .simple-notification .icon svg {
+    width: 60% !important;
+}
+
+::ng-deep .simple-notification {
+    background: var(--info) !important;
+}
+
+::ng-deep .simple-notification.success {
+    background: var(--success) !important;
+}
+
+::ng-deep .simple-notification.info {
+    background: var(--info) !important;
+}
+
+::ng-deep .simple-notification.warning {
+    background: var(--warning) !important;
+}
+
+::ng-deep .simple-notification.alert {
+    background: var(--blue) !important;
+}
+
+::ng-deep .simple-notification.error {
+    background: var(--danger) !important;
+}
+
+::ng-deep .simple-notification {
+    border-radius: 5px;
+}
+
+    ::ng-deep .simple-notification .sn-progress-loader span {
+        border-radius: 5px;
+    }
+
+    ::ng-deep .simple-notification .sn-progress-loader {
+        padding-right: 3px;
+        padding-left: 3px;
+        padding-top: 1px;
+    }
+
+    ::ng-deep .simple-notification.success .sn-progress-loader span {
+        background-color: var(--danger) !important;
+    }
+
+    ::ng-deep .simple-notification.info .sn-progress-loader span {
+        background-color: var(--warning) !important;
+    }
+
+    ::ng-deep .simple-notification.warning .sn-progress-loader span {
+        background-color: hotpink !important;
+    }
+
+    ::ng-deep .simple-notification.error .sn-progress-loader span {
+        background-color: var(--orange) !important;
+    }

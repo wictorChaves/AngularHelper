@@ -1,0 +1,65 @@
+<main role="main">
+
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">Flash Cards CSV Generator</h1>
+      <p class="lead text-muted">Crie os seus flash cards de maneira Intuitiva</p>
+    </div>
+  </section>
+
+  <div class="album py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 order-md-1 text-center">
+          <h4 class="mb-3">Flash Card</h4>
+          <div *ngIf="erroMsg.length > 0" class="alert alert-danger">
+            {{ erroMsg }}
+          </div>
+          <div *ngIf="successMsg.length > 0" class="alert alert-success">
+            {{ successMsg }}
+          </div>
+          <form class="needs-validation" novalidate [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="firstName">Frente</label>
+                <textarea class="form-control" formControlName="frente"></textarea>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="lastName">Trás</label>
+                <textarea class="form-control" formControlName="tras"></textarea>
+              </div>
+            </div>
+            <hr class="mb-4">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Adicionar Card</button>
+            <button class="btn btn-danger btn-lg btn-block" type="button" (click)="LimparLista()">Limpar lista</button>
+            <button class="btn btn-success btn-lg btn-block" type="button" (click)="SaveFile()">Salvar Arquivo</button>
+          </form>
+        </div>
+      </div>
+      <br />
+      <div class="row"  *ngIf="csvData.length > 0">
+        <div class="col-12">
+          <div class="col-12">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="text-center">Frente</th>
+                  <th class="text-center">Trás</th>
+                  <th class="text-center"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let data of csvData;">
+                  <th class="text-center">{{ data.frente }}</th>
+                  <td class="text-center">{{ data.tras }}</td>
+                  <td class="text-center"><button class="btn btn-danger btn-sm" type="button" (click)="ExcluirItem(data.id)">Excluir</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>

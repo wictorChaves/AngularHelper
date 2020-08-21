@@ -1,0 +1,35 @@
+<div class="row mb-4">
+    <div class="col-12 d-flex align-items-center justify-content-between">
+        <h4 class="page-title">Alertas</h4>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Mensagens simples</h4>
+                <p class="card-description">Mensagens menores com animação</p>
+                <div class="template-demo">
+                    <button (click)="swalSuccess.show()" type="button" class="btn btn-success 
+                    btn-block"><i class="mdi mdi-check"></i>Sucesso</button>
+                    <button (click)="swalError.show()" type="button" class="btn btn-danger btn-block"><i class="mdi mdi-alert-outline"></i>Erro</button>
+                </div>
+                <br>
+                <h4 class="card-title">Mensagens maiores</h4>
+                <p class="card-description">Mensagens maiores sem animação</p>
+                <div class="template-demo">
+                    <button (click)="swalWarning.show()" type="button" class="btn btn-warning btn-block"><i class="mdi mdi-alert-outline"></i>Alerta</button>
+                    <button (click)="swalInfo.show()" type="button" class="btn btn-info btn-block"><i class="mdi mdi-upload"></i>Informação</button>
+                    <button (click)="swalQuestion.show()" type="button" class="btn btn-secondary btn-block"><i class="mdi mdi-file-document"></i>Padrão</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<swal #swalSuccess title="The Internet?" text="That thing is still around?" type="success"></swal>
+<swal #swalError title="The Internet?" text="That thing is still around?" type="error"></swal>
+<swal #swalWarning title="The Internet?" text="That thing is still around?" type="warning"></swal>
+<swal #swalInfo title="The Internet?" text="That thing is still around?" type="info"></swal>
+<swal #swalQuestion title="The Internet?" text="That thing is still around?" type="question"></swal>

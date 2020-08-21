@@ -1,0 +1,7 @@
+<input type="file" [name]="name" (change)="handleInputChange($event)" class="file-upload-default">
+<div class="input-group col-xs-12" (click)="uploadFile()">
+    <input type="text" class="form-control file-upload-info" disabled [placeholder]="fileName">
+    <span class="input-group-append">
+    <button class="file-upload-browse btn btn-info" type="button">Upload</button>
+  </span>
+</div>

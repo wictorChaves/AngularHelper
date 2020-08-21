@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Formulário </h4>
+                <p class="card-description">
+                    Preencha o formulário
+                </p>
+                <form class="forms-sample" (ngSubmit)="onSubmit()" novalidate [formGroup]="formulario">
+                    <div class="form-group">
+                        <label>Regionais</label>
+                        <app-select-search #ngSelectRegionais [multiple]="false" [itens]="regionais" (change)="changeSelectRegional($event)"></app-select-search>
+                    </div>
+                    <div class="form-group">
+                        <label>Franquias</label>
+                        <app-select-search #ngSelectFranquias [multiple]="false" [itens]="franquias"></app-select-search>
+                    </div>
+                    <button type="submit" class="btn btn-success mr-2">Submit</button>
+                    <button class="btn btn-light">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Resultado </h4>
+                <pre>{{ resultadoTela | json }}</pre>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+body {
+    background-color: #f2f2f2;
+}
+
+.loading *{
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    pointer-events: none;
+    cursor: default;
+}
+.loading:before {
+    content: "\e099";
+    font-family: var(--simple-line-icons);
+    font-size: 30px;
+    font-weight: 900;
+    top: 50%;
+    right: 50%;
+    margin-top: -15px;
+    margin-right: -15px;
+    color: var(--primary);    
+    position: absolute;
+    -webkit-animation: spin 2s linear 0s infinite reverse;
+    -moz-animation: spin 2s linear 0s infinite reverse;  
+    -ms-animation: spin 2s linear 0s infinite reverse;
+    -o-animation: spin 2s linear 0s infinite reverse;
+    animation: spin 2s linear 0s infinite reverse;
+}
+
+.navbar.default-layout.navbar-info .navbar-menu-wrapper .navbar-nav .nav-item.user-dropdown {
+    border-right-color: var(--primary);
+    border-left-color: var(--primary);
+}
+
+.navbar.default-layout.navbar-info .navbar-menu-wrapper .navbar-nav .nav-item.user-dropdown .dropdown-toggle .dropdown-toggle-wrapper .icon-wrapper {
+    border-color: var(--primary);
+}
+
+/* Logo */
+.container-scroller .navbar a.logo-texto img {
+    margin-top: 15px;
+    display: block;
+}
+
+.sidebar-icon-only .container-scroller .navbar a.logo-mini img {
+    margin-top: 15px;
+    display: block;
+}
+
+.sidebar-icon-only .container-scroller .navbar a.logo-texto img {
+    display: none;
+}
+
+.container-scroller .navbar a.logo-mini img {
+    display: none;
+}
+
+body > app-root > div > div > div > app-formulario-datepicker > div > div:nth-child(1) > div > div > form > div > my-date-picker > div > div.selector.selectorarrow.selectorarrowleft > table.header > tbody > tr > td:nth-child(2) > button{
+    color: red;
+}

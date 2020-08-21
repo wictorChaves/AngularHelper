@@ -1,0 +1,3 @@
+<ng-select #ngSelect [placeholder]="placeholder" bindLabel="itens" [(ngModel)]="itensSelecionados" [multiple]="multiple" (change)="changeSelect()">
+    <ng-option *ngFor="let item of itens" [value]="item.id">{{item.name}}</ng-option>
+</ng-select>

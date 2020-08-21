@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Formulário </h4>
+                <p class="card-description">
+                    Preencha o formulário
+                </p>
+                <form class="forms-sample" (ngSubmit)="onSubmit()" novalidate [formGroup]="formulario">
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input formControlName="nome" id="nome" type="text" class="form-control" placeholder="Nome"> 
+                        <label id="cname-error" class="error mt-2 text-danger" for="cname">{{ msgValidacao.nome }}</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input formControlName="email" id="email" type="email" class="form-control" placeholder="E-mail">    
+                        <label id="cname-error" class="error mt-2 text-danger" for="cname">{{ msgValidacao.email }}</label>                    
+                    </div>
+                    <div class="form-group">
+                        <label for="senha">Password</label>
+                        <input formControlName="senha" type="password" class="form-control" id="senha" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="texto">Textarea</label>
+                        <textarea formControlName="texto" class="form-control" id="texto" rows="2"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input formControlName="checkbox" type="checkbox" class="form-check-input"> Verdade?<i
+                                    class="input-helper"></i>
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success mr-2">Submit</button>
+                    <button class="btn btn-light">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Resultado </h4>
+                <pre>{{ resultadoTela | json }}</pre>
+            </div>
+        </div>
+    </div>
+</div>
