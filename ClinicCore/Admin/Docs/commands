@@ -1,0 +1,8 @@
+#Install
+npm install -g firebase-tools
+
+#Create project
+firebase init
+
+#Deploy
+firebase deploy
