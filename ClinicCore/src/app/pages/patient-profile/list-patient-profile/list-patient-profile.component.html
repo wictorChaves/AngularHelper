@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header card-default">
+        <div class="row">
+          <div class="col-6">
+            Lista de pacientes
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="table-container">
+          <table class="table" [ngClass]="{ 'loading': loadingHelper.IsLoading() }">
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th class="text-center">E-mail</th>
+                <th class="text-center">Estado</th>
+                <th class="text-center"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of list">
+                <ng-template [ngIf]="item.data.active">
+                  <td>{{ item.data.displayName }}</td>
+                  <td class="text-center">{{ item.data.email }}</td>
+                  <td class="text-center">
+                    <span *ngIf="item.data.active" class="label label-success">Ativo</span>
+                    <span *ngIf="!item.data.active" class="label label-danger">Inativo</span>
+                  </td>
+                  <td class="text-center">
+                    <a [routerLink]="['/perfil-paciente/', item.uid, 'receitas']" class="btn btn-info btn-xs">Perfil</a>
+                  </td>
+                </ng-template>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

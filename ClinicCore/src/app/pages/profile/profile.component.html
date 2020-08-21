@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-md-4">
+    <div class="widget white-bg">
+      <div class="padding-20 text-center">
+        <img alt="Profile Picture" width="140" class="rounded-circle mar-btm margin-b-10 circle-border "
+          src="assets/img/avtar-2.png">
+        <p class="lead font-500 margin-b-0">{{ ( patient$ | async )?.data.displayName }}</p>
+        <p class="text-muted">Administrator</p>
+        <p class="text-sm margin-b-0">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula
+          eget dolor. Aenean massa. </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-body">
+        <div class="tabs">
+          <ul class="nav nav-tabs">
+            <li class="nav-item" role="presentation">
+              <a [routerLink]="['/perfil/', uidPatient, 'receitas']" routerLinkActive="active"
+                class="nav-link">Receitas</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a [routerLink]="['/perfil/', uidPatient, 'exames']" routerLinkActive="active"
+                class="nav-link">Exames</a>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active">
+              <router-outlet></router-outlet>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

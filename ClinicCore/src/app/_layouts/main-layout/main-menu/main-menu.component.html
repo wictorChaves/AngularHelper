@@ -1,0 +1,35 @@
+<div class="main-horizontal-nav">
+  <nav>
+    <!-- Menu Toggle btn-->
+    <div class="menu-toggle">
+      <h3>Menu</h3>
+      <button type="button" id="menu-btn">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <ul class="ace-responsive-menu">
+      <li *ngIf="claims['master']"><a [routerLink]="['/administradores']"><i class="fa fa-home"></i> Administradores</a>
+      </li>
+      <li *ngIf="claims['admin']"><a routerLink="/medicos"><i class="fa fa-plus"></i> Médicos</a></li>
+      <li *ngIf="claims['admin']"><a [routerLink]="['/recepcionistas']"><i class="fa fa-comments"></i>
+          Recepcionistas</a></li>
+      <li *ngIf="claims['reception']"><a [routerLink]="['/pacientes']"><i class="fa fa-user"></i> Pacientes</a></li>
+      <li *ngIf="claims['doctor']"><a [routerLink]="['/medicamentos']"><i class="fa fa-user"></i> Medicamentos</a></li>
+      <li *ngIf="claims['doctor']"><a [routerLink]="['/perfil-paciente']"><i class="fa fa-user"></i> Pacientes</a></li>
+      <li *ngIf="claims['reception']">
+        <a (click)="OpenMenu(1)" [routerLink]="" class="menu-active"><i class="fa fa-calendar"></i>Agenda <span
+            class="arrow"></span></a>
+        <ul [ngClass]="{'sub-menu': idMenu == 1 }">
+          <li><a (click)="OpenMenu(0)" [routerLink]="['/marcacao/marcar']">Marcar</a></li>
+          <li><a (click)="OpenMenu(0)" [routerLink]="['/marcacao']">Marcações</a></li>
+          <li><a (click)="OpenMenu(0)" [routerLink]="['/agenda-medico']">Médico</a></li>
+          <li><a (click)="OpenMenu(0)" [routerLink]="['/marcacao/estastisticas']">Estatística</a></li>
+          <li><a (click)="OpenMenu(0)" [routerLink]="['/marcacao/historico']">Histórico</a></li>
+        </ul>
+      </li>
+      <li *ngIf="claims['reception']"><a [routerLink]="['/salas']"><i class="fa fa-building"></i> Salas</a></li>
+    </ul>
+  </nav>
+</div>

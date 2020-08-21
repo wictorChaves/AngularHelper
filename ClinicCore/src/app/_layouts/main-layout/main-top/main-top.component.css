@@ -1,0 +1,6 @@
+.top-right-nav > li > span {
+    display: block;
+    line-height: 60px;
+    padding: 0px 15px;
+    color: #909fa7;
+}

@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-header card-default">
+        Informações do usuário
+      </div>
+      <div class="card-body">
+        <form class="forms-sample" (ngSubmit)="formulario.onSubmit()" novalidate [formGroup]="formulario"
+          [class]="loadingHelper.Class()">
+          <app-has-danger [condition]="formulario.GetListErrors()['nome']" class="form-group">
+            <label>Nome</label>
+            <input formControlName="nome" type="text" class="form-control form-control-rounded">
+          </app-has-danger>
+          <app-form-errors [formulario]="formulario"></app-form-errors>
+          <br />
+          <a [routerLink]="['/administradores/']" class="btn btn-primary margin-l-5 mx-sm-3">Voltar</a>
+          <button type="submit" class="btn btn-primary margin-l-5 mx-sm-3">Salvar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

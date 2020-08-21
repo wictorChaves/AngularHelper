@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-12 align-self-center text-right">
+        <a [routerLink]="['/perfil-paciente/', uid, 'exames','solicitar']"
+          *ngIf="!( userLogged$ | async )?.claims.patient" class="btn btn-success box-shadow btn-icon btn-rounded"><i
+            class="fa fa-plus"></i> Solicitar</a>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="table-container">
+      <table class="table" [ngClass]="{ 'loading': loadingHelper.IsLoading() }">
+        <thead>
+          <tr>
+            <th>Nome Genérico</th>
+            <th class="text-center">Status</th>
+            <th class="text-center"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of list">
+            <td>{{ item.data.description | treePoints:50 }}</td>
+            <td class="text-center">
+              <span *ngIf="item.data.status == 'requested'" class="label label-warning">Solicitado</span>
+              <span *ngIf="item.data.status == 'delivered'" class="label label-info">Entregue</span>
+              <span *ngIf="item.data.status == 'result'" class="label label-success">Resultado</span>
+              <span *ngIf="item.data.status == 'canceled'" class="label label-danger">Cancelado</span>
+            </td>
+            <td class="text-center">
+              <a *ngIf="item.data.status == 'delivered' && !( userLogged$ | async )?.claims.patient"
+                [routerLink]="['/perfil-paciente/', uid, 'exames', 'resultado', item.uid]"
+                class="btn btn-teal btn-xs">Resultado</a>
+              &nbsp;
+              <a [routerLink]="['visualizar', item.uid]" class="btn btn-teal btn-xs">Visualizar</a>
+              &nbsp;
+              <a *ngIf="item.data.status == 'requested' && !( userLogged$ | async )?.claims.patient"
+                (click)="Deliver(item.uid)" class="btn btn-info btn-xs">Receber</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

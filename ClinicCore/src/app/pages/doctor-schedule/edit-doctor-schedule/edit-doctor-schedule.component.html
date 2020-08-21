@@ -1,0 +1,73 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-header card-default">
+        Informações do usuário
+      </div>
+      <div class="card-body">
+        <form class="forms-sample" (ngSubmit)="formulario.onSubmit()" novalidate [formGroup]="formulario"
+          [class]="loadingHelper.Class()">
+          <div class="row">
+            <div class="col-3">
+              <app-has-danger [condition]="formulario.GetListErrors()['dayWeek']" class="form-group">
+                <label>Dia da Semana</label>
+                <select formControlName="dayWeek" class="form-control m-b">
+                  <option value="domingo">Domingo</option>
+                  <option value="segunda">Segunda</option>
+                  <option value="terca">Terça</option>
+                  <option value="quarta">Quarta</option>
+                  <option value="quinta">Quinta</option>
+                  <option value="sexta">Sexta</option>
+                  <option value="sabado">Sábado</option>
+                </select>
+              </app-has-danger>
+            </div>
+            <div class="col-3">
+              <app-has-danger [condition]="formulario.GetListErrors()['startTime']" class="form-group">
+                <label>Hora Inicio</label>
+                <input formControlName="startTime" type="time" class="form-control">
+              </app-has-danger>
+            </div>
+            <div class="col-3">
+              <app-has-danger [condition]="formulario.GetListErrors()['endTime']" class="form-group">
+                <label>Hora Fim</label>
+                <input formControlName="endTime" type="time" class="form-control">
+              </app-has-danger>
+            </div>
+            <div class="col-3">
+              <div class="form-group">
+                <label>&nbsp;</label>
+                <button type="submit" class="btn btn-primary form-control margin-l-5 mx-sm-3">Adicionar</button>
+              </div>
+            </div>
+          </div>
+          <app-form-errors [formulario]="formulario"></app-form-errors>
+          <div class="table-container">
+            <table class="table" *ngIf="times.length > 0">
+              <thead>
+                <tr>
+                  <th>Dia da Semana</th>
+                  <th class="text-center">Hora Inicio</th>
+                  <th class="text-center">Hora Fim</th>
+                  <th class="text-center"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let time of times; let i = index">
+                  <td>{{ time.dayWeek }}</td>
+                  <td class="text-center">{{ time.startTime }}</td>
+                  <td class="text-center">{{ time.endTime }}</td>
+                  <td class="text-center"><button type="button" (click)="Excluir(i)" class="btn btn-danger btn-icon"><i
+                        class="fa fa-times"></i> Excluir</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <br />
+          <a [routerLink]="['/agenda-medico/']" class="btn btn-primary margin-l-5 mx-sm-3">Voltar</a>
+          <button type="button" class="btn btn-primary margin-l-5 mx-sm-3" (click)="Save()">Salvar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

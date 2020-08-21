@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header card-default">
+        <div class="row">
+          <div class="col-6">
+            Marcações do dia
+          </div>
+          <div *ngIf="claims['reception']" class="col-6 align-self-center text-right">
+            <a [routerLink]="['/marcacao/marcar/']" class="btn btn-success box-shadow btn-icon btn-rounded"><i
+                class="fa fa-plus"></i> Marcar</a>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="table-container">
+          <table class="table" [ngClass]="{ 'loading': loadingHelper.IsLoading() }">
+            <thead>
+              <tr>
+                <th>Médico</th>
+                <th>Paciente</th>
+                <th class="text-center">Chegada</th>
+                <th class="text-center">Saída</th>
+                <th class="text-center"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of list">
+                <td>{{ item.data.doctor.displayName }}</td>
+                <td>{{ item.data.patient.displayName }}</td>
+                <td class="text-center">{{ item.data.timeInitial }}</td>
+                <td class="text-center">{{ item.data.timeFinal }}</td>
+                <td class="text-center">
+                  <button *ngIf="item.data.status == 'active'" (click)="Attended(item.uid)"
+                    class="btn btn-info btn-xs">Atendido</button>&nbsp;
+                  <button *ngIf="item.data.status == 'active'" (click)="Cancel(item.uid)"
+                    class="btn btn-danger btn-xs">Cancelar</button>
+                  <span *ngIf="item.data.status == 'attended'" class="label label-success">Atendido</span>
+                  <span *ngIf="item.data.status == 'canceled'" class="label label-danger">Cancelado</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

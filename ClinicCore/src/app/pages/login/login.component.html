@@ -1,0 +1,55 @@
+<div class="misc-wrapper">
+  <div class="misc-content">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-custom">
+          <div class="misc-header text-center">
+            <img alt="" src="assets/img/icon.png" class="logo-icon margin-r-10">
+            <img alt="" src="assets/img/logo-dark.png" class="toggle-none hidden-xs">
+          </div>
+          <app-form-errors [formulario]="formulario"></app-form-errors>
+          <div class="card-body" *ngIf="(message$ | async) != null">
+            <div class="alert alert-danger alert-dismissible" role="alert">
+              {{ (message$ | async)?.message }}
+            </div>
+          </div>
+          <div class="misc-box">
+            <form class="forms-sample" (ngSubmit)="formulario.onSubmit()" novalidate [formGroup]="formulario"
+              [class]="loadingHelper.Class()">
+              <app-has-danger [condition]="formulario.GetListErrors()['email']" class="form-group">
+                <label for="exampleuser1">E-Mail</label>
+                <div class="group-icon">
+                  <input formControlName="email" id="exampleuser1" type="text" placeholder="E-mail" class="form-control"
+                    required="">
+                  <span class="icon-user text-muted icon-input"></span>
+                </div>
+              </app-has-danger>
+              <app-has-danger [condition]="formulario.GetListErrors()['password']" class="form-group">
+                <label for="exampleInputPassword1">Senha</label>
+                <div class="group-icon">
+                  <input formControlName="password" id="exampleInputPassword1" type="password" placeholder="Senha"
+                    class="form-control">
+                  <span class="icon-lock text-muted icon-input"></span>
+                </div>
+              </app-has-danger>
+              <div class="clearfix">
+                <div class="float-center btn-login">
+                  <button type="submit" class="btn btn-block btn-primary btn-rounded box-shadow">Entrar</button>
+                </div>
+              </div>
+              <div class="clearfix">
+                <div class="float-center btn-login">
+                  <button type="button" (click)="LoginMaster()"
+                    class="btn btn-block btn-primary btn-rounded box-shadow">Entrar com Master</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="text-center misc-footer">
+            <p>Todos os direitos reservados &copy; 2019 Clinica Core</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

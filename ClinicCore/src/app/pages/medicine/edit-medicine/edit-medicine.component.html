@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-header card-default">
+        Informações do medicamento
+      </div>
+      <div class="card-body">
+        <form class="forms-sample" (ngSubmit)="formulario.onSubmit()" novalidate [formGroup]="formulario"
+          [class]="loadingHelper.Class()">
+          <app-has-danger [condition]="formulario.GetListErrors()['nome']" class="form-group">
+            <label>Nome Genérico</label>
+            <input formControlName="nome" type="text" class="form-control form-control-rounded">
+          </app-has-danger>
+          <app-has-danger [condition]="formulario.GetListErrors()['fabrica']" class="form-group">
+            <label>Nome de Fábrica</label>
+            <input formControlName="fabrica" type="text" class="form-control form-control-rounded">
+          </app-has-danger>
+          <app-has-danger [condition]="formulario.GetListErrors()['fabricante']" class="form-group">
+            <label>Fabricante</label>
+            <input formControlName="fabricante" type="text" class="form-control form-control-rounded">
+          </app-has-danger>
+          <app-form-errors [formulario]="formulario"></app-form-errors>
+          <br />
+          <a [routerLink]="['/medicamentos/']" class="btn btn-primary margin-l-5 mx-sm-3">Voltar</a>
+          <button type="submit" class="btn btn-primary margin-l-5 mx-sm-3">Salvar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

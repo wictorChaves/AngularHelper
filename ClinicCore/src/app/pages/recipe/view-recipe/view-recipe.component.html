@@ -1,0 +1,28 @@
+<div class="row" id="sortable-view">
+  <div class="col-sm-12">
+    <textarea class="form-control textarea-recipe"
+      disabled="disabled">{{ ( recipe$ | async )?.data.recipeText }}</textarea>
+    <div class="card-header sortable-title">
+      Medicamentos
+    </div>
+    <div class="table-container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nome Genérico</th>
+            <th class="text-center">Quantidade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of ( recipe$ | async )?.data.medicines">
+            <ng-template [ngIf]="item.data.active">
+              <td>{{ item.data.nome }}</td>
+              <td class="text-center">{{ item.quantity }}</td>
+            </ng-template>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <button (click)="GoBack()" class="btn btn-primary margin-l-5 mx-sm-3">Voltar</button>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-header card-default">
+        Informações da marcação
+      </div>
+      <div class="card-body">
+        <form class="forms-sample" (ngSubmit)="formulario.onSubmit()" novalidate [formGroup]="formulario"
+          [class]="loadingHelper.Class()">
+          <div class="row">
+            <div class="col-6">
+              <app-has-danger [condition]="formulario.GetListErrors()['uidDoctor']" class="form-group">
+                <label>Médicos</label>
+                <select formControlName="uidDoctor" class="form-control m-b">
+                  <option *ngFor="let doctor of doctors" [value]="doctor.uid">{{ doctor.data.displayName }}</option>
+                </select>
+              </app-has-danger>
+            </div>
+            <div class="col-6">
+              <app-has-danger [condition]="formulario.GetListErrors()['uidRoom']" class="form-group">
+                <label>Sala</label>
+                <select formControlName="uidRoom" class="form-control m-b">
+                  <option *ngFor="let item of ( rooms$ | async )" [value]="item.uid">
+                    {{ item.data.name }}</option>
+                </select>
+              </app-has-danger>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <app-has-danger [condition]="formulario.GetListErrors()['date']" class="form-group">
+                <label>Data</label>
+                <input formControlName="date" type="date" class="form-control">
+              </app-has-danger>
+            </div>
+            <div class="col-4">
+              <app-has-danger [condition]="formulario.GetListErrors()['timeInitial']" class="form-group">
+                <label>Chegada</label>
+                <input formControlName="timeInitial" type="time" class="form-control">
+              </app-has-danger>
+            </div>
+            <div class="col-4">
+              <app-has-danger [condition]="formulario.GetListErrors()['timeInitial']" class="form-group">
+                <label>Saída</label>
+                <input formControlName="timeFinal" type="time" class="form-control">
+              </app-has-danger>
+            </div>
+          </div>
+          <app-form-errors [formulario]="formulario"></app-form-errors>
+          <br />
+          <a [routerLink]="['/marcacao/marcar']" class="btn btn-primary margin-l-5 mx-sm-3">Voltar</a>
+          <button type="submit" class="btn btn-primary margin-l-5 mx-sm-3">Salvar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

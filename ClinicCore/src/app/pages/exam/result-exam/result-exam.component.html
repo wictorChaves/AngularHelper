@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card-header card-default">
+      Solicitar Exame
+    </div>
+    <form class="forms-sample" (ngSubmit)="formulario.onSubmit()" novalidate [formGroup]="formulario"
+      [class]="loadingHelper.Class()">
+      <app-has-danger [condition]="formulario.GetListErrors()['uidType']" class="form-group">
+        <label>Tipo de Exame</label>
+        <select disabled="disabled" formControlName="uidType" class="form-control m-b">
+          <option *ngFor="let type of types$ | async" [value]="type.uid">{{ type.data.name }}</option>
+        </select>
+      </app-has-danger>
+      <app-has-danger [condition]="formulario.GetListErrors()['description']" class="form-group">
+        <label>Descrição</label>
+        <textarea disabled="disabled" formControlName="description" type="text" class="form-control"></textarea>
+      </app-has-danger>
+      <app-has-danger [condition]="formulario.GetListErrors()['result']" class="form-group">
+        <label>Resultado</label>
+        <textarea formControlName="result" type="text" class="form-control"></textarea>
+      </app-has-danger>
+      <app-form-errors [formulario]="formulario"></app-form-errors>
+      <br />
+      <a [routerLink]="['/perfil-paciente/', uidPatient, 'exames']"
+        class="btn btn-primary margin-l-5 mx-sm-3">Voltar</a>
+      <button type="submit" class="btn btn-primary margin-l-5 mx-sm-3">Salvar</button>
+    </form>
+  </div>
+</div>

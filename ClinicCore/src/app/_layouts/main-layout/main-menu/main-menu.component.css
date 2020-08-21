@@ -1,0 +1,8 @@
+.main-horizontal-nav a {
+    color: white;
+    cursor: pointer;
+}
+
+.sub-menu {
+    display: block !important;
+}

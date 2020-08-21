@@ -1,0 +1,111 @@
+<div class="top-bar light-top-bar">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <a class="admin-logo" routerLink="/">
+          <h1>
+            <img alt="" src="assets/img/icon.png" class="logo-icon margin-r-10">
+            <img alt="" src="assets/img/logo-dark.png" class="toggle-none hidden-xs">
+          </h1>
+        </a>
+        <ul class="list-inline top-right-nav">
+          <li *ngIf="afAuth.user | async as user" class="dropdown show">
+            <span class="capitalize" data-toggle="dropdown">
+              <img alt="" class="rounded-circle" src="assets/img/avtar-2.png" width="30">
+              {{ user.displayName }} ( <span (click)="Logout()" class="cursor-pointer">Sair</span> )
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<nav class="toggle-sidebar" id="right-sidebar-toggle">
+  <div class="nano">
+    <div class="nano-content">
+      <div>
+        <ul class="list-inline nav-tab-card clearfix" role="tablist">
+
+          <li class="active" role="presentation">
+            <a aria-controls="friends" data-toggle="tab" href="#friends" role="tab">Friends</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="friends" role="tabcard">
+            <ul class="list-unstyled sidebar-contact-list">
+              <li class="clearfix">
+                <a class="media-box" href="#"><span class="float-right"><span
+                      class="circle circle-success circle-lg"></span></span> <span class="float-left">
+                    <img alt="user" class="media-box-object rounded-circle" src="assets/img/avtar-2.png"
+                      width="50"></span>
+                  <span class="media-box-body"><span class="media-box-heading"><strong>John Doe</strong><br>
+                      <small class="text-muted">Designer</small></span></span></a>
+              </li>
+              <li class="clearfix">
+                <a class="media-box" href="#"><span class="float-right"><span
+                      class="circle circle-success circle-lg"></span></span> <span class="float-left">
+                    <img alt="user" class="media-box-object rounded-circle" src="assets/img/avtar-1.png"
+                      width="50"></span>
+                  <span class="media-box-body"><span class="media-box-heading"><strong>Govinda Doe</strong><br>
+                      <small class="text-muted">Designer</small></span></span></a>
+              </li>
+              <li class="clearfix">
+                <a class="media-box" href="#"><span class="float-right"><span
+                      class="circle circle-danger circle-lg"></span></span> <span class="float-left">
+                    <img alt="user" class="media-box-object rounded-circle" src="assets/img/avtar-3.png"
+                      width="50"></span>
+                  <span class="media-box-body"><span class="media-box-heading"><strong>Megan Doe</strong><br>
+                      <small class="text-muted">Designer</small></span></span></a>
+              </li>
+              <li class="clearfix">
+                <a class="media-box" href="#"><span class="float-right"><span
+                      class="circle circle-success circle-lg"></span></span> <span class="float-left">
+                    <img alt="user" class="media-box-object rounded-circle" src="assets/img/avtar-4.png"
+                      width="50"></span>
+                  <span class="media-box-body"><span class="media-box-heading"><strong>Hritik Doe</strong><br>
+                      <small class="text-muted">Designer</small></span></span></a>
+              </li>
+              <li class="clearfix">
+                <a class="media-box" href="#"><span class="float-right"><span
+                      class="circle circle-success circle-lg"></span></span> <span class="float-left">
+                    <img alt="user" class="media-box-object rounded-circle" src="assets/img/avtar-5.png"
+                      width="50"></span>
+                  <span class="media-box-body"><span class="media-box-heading"><strong>Bianca Doe</strong><br>
+                      <small class="text-muted">Designer</small></span></span></a>
+              </li>
+              <li class="clearfix">
+                <a class="media-box" href="#"><span class="float-right"><span
+                      class="circle circle-success circle-lg"></span></span> <span class="float-left">
+                    <img alt="user" class="media-box-object rounded-circle" src="assets/img/avtar-6.png"
+                      width="50"></span>
+                  <span class="media-box-body"><span class="media-box-heading"><strong>John Doe</strong><br>
+                      <small class="text-muted">Designer</small></span></span></a>
+              </li>
+              <li class="clearfix">
+                <a class="media-box" href="#"><span class="float-right"><span
+                      class="circle circle-success circle-lg"></span></span> <span class="float-left">
+                    <img alt="user" class="media-box-object rounded-circle" src="assets/img/avtar-1.png"
+                      width="50"></span>
+                  <span class="media-box-body"><span class="media-box-heading"><strong>Govinda Doe</strong><br>
+                      <small class="text-muted">Designer</small></span></span></a>
+              </li>
+              <li class="clearfix">
+                <a class="media-box" href="#"><span class="float-right"><span
+                      class="circle circle-danger circle-lg"></span></span> <span class="float-left">
+                    <img alt="user" class="media-box-object rounded-circle" src="assets/img/avtar-2.png"
+                      width="50"></span>
+                  <span class="media-box-body"><span class="media-box-heading"><strong>Megan Doe</strong><br>
+                      <small class="text-muted">Designer</small></span></span></a>
+              </li>
+              <li>
+                <div class=" text-center">
+                  <a class="btn btn-teal" href="javascript:void(0);" title="See more contacts">Load more..</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

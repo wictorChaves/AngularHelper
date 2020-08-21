@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header card-default">
+        <div class="row">
+          <div class="col-6">
+            Estatísticas de agendamento
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div>
+          <div>
+            <div style="display: block">
+              <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+                [legend]="barChartLegend" [chartType]="barChartType" [colors]="chartColors">
+              </canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

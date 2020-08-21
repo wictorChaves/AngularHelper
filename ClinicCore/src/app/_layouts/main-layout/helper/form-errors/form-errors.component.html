@@ -1,0 +1,7 @@
+<div class="card-body" *ngIf="formulario.HasError()">
+  <div class="alert alert-danger alert-dismissible" role="alert">
+    <p *ngFor="let msg of formulario.GetListErrorsActive()" class="card-text">
+      {{ formulario.GetListErrors()[msg] }}
+    </p>
+  </div>
+</div>

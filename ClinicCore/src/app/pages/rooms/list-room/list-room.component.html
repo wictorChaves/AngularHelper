@@ -1,0 +1,39 @@
+<div class="card">
+  <div class="card-header card-default">
+    <div class="row">
+      <div class="col-6"> Salas </div>
+      <div class="col-6 align-self-center text-right">
+        <a class="btn btn-success box-shadow btn-icon btn-rounded" [routerLink]="['adicionar/']">
+          <i class="fa fa-plus"></i> Adicionar
+        </a>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="card-body">
+          <div class="table-container">
+            <table class="table" [ngClass]="{ 'loading': loadingHelper.IsLoading() }">
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th class="text-center"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of list">
+                  <ng-template [ngIf]="item.data.active">
+                    <td>{{ item.data.name }}</td>
+                    <td class="text-center">
+                      <a [routerLink]="['editar/', item.uid]" class=" btn btn-info btn-xs">Editar</a>&nbsp;
+                      <button (click)="RemoveItem(item.uid)" class="btn btn-danger btn-xs">Excluir</button>
+                    </td>
+                  </ng-template>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
