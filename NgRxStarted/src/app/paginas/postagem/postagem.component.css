@@ -1,0 +1,6 @@
+.avaliacao{
+    background-color: var(--primary);
+    padding: 7px;
+    color: white;
+    border-radius: 5px;
+}

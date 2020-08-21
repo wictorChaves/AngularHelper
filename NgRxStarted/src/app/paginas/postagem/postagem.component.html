@@ -1,0 +1,38 @@
+<h1 class="bd-title" id="content">Postagem</h1>
+<p class="bd-lead">Tradutor utilizando RgRx para controle de estados</p>
+<br />
+<div class="row">
+  <div class="col">
+    <h1 class="display-4">{{ (post$ | async)?.text }}</h1>
+    <p class="bd-lead text-right">
+      Avaliação
+      <span class="avaliacao" *ngIf="post$ | async as p"> {{ (post$ | async)?.likes }} </span>
+    </p>
+  </div>
+</div>
+<hr />
+<div class="row text-right">
+  <div class="col">
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-success">
+        <input (click)="upvote()" type="radio" name="options" id="option2" autocomplete="off"> Positivar
+      </label>
+      <label class="btn btn-danger">
+        <input (click)="downvote()" type="radio" name="options" id="option1" autocomplete="off" checked> Negativar
+      </label>
+      <label class="btn btn-warning">
+        <input (click)="resetPost()" type="radio" name="options" id="option1" autocomplete="off" checked> Resetar
+      </label>
+    </div>
+  </div>
+</div>
+<p class="bd-lead text-right">
+  Editar postagem
+</p>
+<div class="form-group mb-2 w-100">
+  <input #textoInput name="textoInput" type="text" class="form-control-plaintext" id="textoInput"
+    placeholder="Texto da nova publicação">
+</div>
+<div class="col">
+  <button type="button" (click)="editText()" class="btn btn-primary mb-2 btn-default">Alterar publicação</button>
+</div>

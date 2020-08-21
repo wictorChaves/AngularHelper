@@ -1,0 +1,21 @@
+<h1 class="bd-title" id="content">Tradutor</h1>
+<p class="bd-lead">Tradutor utilizando RgRx para controle de estados</p>
+<br />
+<div class="row">
+  <div class="col">
+    <h1 class="display-4">{{ message$ | async }}</h1>
+  </div>
+</div>
+<br />
+<div class="row">
+  <div class="col">
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-danger">
+        <input (click)="spanishMessage()" type="radio" name="options" id="option2" autocomplete="off"> Spanish
+      </label>
+      <label class="btn btn-success">
+        <input (click)="frenchMessage()" type="radio" name="options" id="option1" autocomplete="off" checked> French
+      </label>
+    </div>
+  </div>
+</div>

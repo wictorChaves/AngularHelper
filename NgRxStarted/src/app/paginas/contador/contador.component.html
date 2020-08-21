@@ -1,0 +1,31 @@
+<h1 class="bd-title" id="content">Contator</h1>
+<p class="bd-lead">Contador utilizando RgRx para controle de estados</p>
+<br />
+<div class="row">
+  <div class="col">
+    <h1 class="display-4">Quantidade atual</h1>
+  </div>
+  <div class="col">
+    <h1 class="display-4">{{ count$ | async }}</h1>
+  </div>
+</div>
+<br />
+<div class="row">
+  <div class="col">
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-info">
+        <input (click)="reset()" type="radio" name="options" id="option3" autocomplete="off"> Resetar
+      </label>
+    </div>
+  </div>
+  <div class="col">
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-danger">
+        <input (click)="decrement()" type="radio" name="options" id="option2" autocomplete="off"> -&nbsp;
+      </label>
+      <label class="btn btn-success">
+        <input (click)="increment()" type="radio" name="options" id="option1" autocomplete="off" checked> +
+      </label>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<h1 class="bd-title" id="content">Filmes Rx</h1>
+<p class="bd-lead">Paginas com filmes Rx</p>
+<br />
+<ul>
+  <li *ngFor="let movie of movies$ | async">
+    {{ movie.name }}
+  </li>
+</ul>
+
+<b>Aqui: {{  movies$ | async | json }}|</b>

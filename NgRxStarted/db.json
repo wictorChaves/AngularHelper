@@ -1,0 +1,20 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "name": "O Poderoso Chefão"
+    },
+    {
+      "id": 2,
+      "name": "A Lista de Schindler"
+    },
+    {
+      "id": 3,
+      "name": "O Rei Leão"
+    },
+    {
+      "id": 4,
+      "name": "Um Sonho de Liberdade"
+    }
+  ]
+}
