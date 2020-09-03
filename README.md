@@ -2,7 +2,7 @@
 
 ## Helper
 
-[Atualizar projeto](https://update.angular.io/)
+[Atualizar projeto - Angular Update Guide](https://update.angular.io/)
  
 ## Descrições dos projetos
  
