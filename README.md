@@ -19,3 +19,5 @@
  - [Ngrx Auth](/NgRxAuth)
  
  - [Passaro Urbano](/PassaroUrbano)
+ 
+ - [Planning Poker](https://github.com/wictorChaves/planningPoker)
