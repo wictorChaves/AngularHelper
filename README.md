@@ -2,7 +2,8 @@
 
 ## Helper
 
-[Atualizar projeto - Angular Update Guide](https://update.angular.io/)
+ - [Atualizar projeto - Angular Update Guide](https://update.angular.io/)
+ - [Karma Clear Screen - Limpa a tela antes de iniciar os novos testes unitários](https://github.com/wictorChaves/karma-clear-screen)
  
 ## Descrições dos projetos
  
