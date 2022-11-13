@@ -1,0 +1,35 @@
+<div class="chat-content">
+    <div class="chat-content-top">
+        <img src="./assets/image/group-icon.png">
+        <div class="group-info">
+            <div class="name">
+                <span>Grupo</span>
+            </div>
+            <div class="members">
+                <span>Membro 1, Membro 2</span>
+            </div>
+        </div>
+    </div>
+    <div class="chat-content-chat">
+        <div class="messages" id="messages">
+            <div *ngFor="let message of sortMessages(messages);"
+                [ngClass]="{ 'send-mensage': message.user.uid == user.uid, 'received-mensage': message.user.uid != user.uid }">
+                <div class="balloon-mensage">
+                    <div class="member">
+                        {{ message.user.name }}
+                    </div>
+                    {{ message.message }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <form [formGroup]="form" class="chat-content-bottom" (ngSubmit)="onSubmit()">
+        <input formControlName="message" type="text" placeholder="Mensagem">
+        <button type="submit">
+            <svg viewBox="0 0 24 24" width="24" height="24" class="">
+                <path fill="currentColor"
+                    d="M1.101 21.757 23.8 12.028 1.101 2.3l.011 7.912 13.623 1.816-13.623 1.817-.011 7.912z"></path>
+            </svg>
+        </button>
+    </form>
+</div>

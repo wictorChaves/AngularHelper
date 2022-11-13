@@ -1,0 +1,148 @@
+.chat-content {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    .chat-content-top {
+        width: 100%;
+        height: 60px;
+        background-color: #f0f2f5;
+        img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-left: 10px;
+            margin-top: 10px;
+            float: left;
+            margin-right: 5px;
+        }
+        .group-info {
+            padding-top: 1px;
+            width: calc(100% - 60px);
+            height: 100%;
+            float: left;
+            .name {
+                font-family: system-ui;
+                font-size: 16px;
+                font-weight: 400;
+                color: #111b21;
+                margin-left: 10px;
+                margin-top: 10px;
+                padding-bottom: 5px;
+            }
+            .members {
+                font-family: system-ui;
+                width: 100%;
+                height: 100%;
+                float: left;
+                padding-left: 10px;
+                font-size: 13px;
+                color: #667781;
+            }
+        }
+        font-weight: 400;
+    }
+    .chat-content-chat {
+        .messages {
+            overflow: auto;
+            width: 100%;
+            height: calc(100vh - 120px);
+            z-index: 1;
+            position: relative;
+        }
+        width: 100%;
+        height: calc(100vh - 120px);
+        background-color: #efeae2;
+        background-repeat: repeat;
+        &::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: calc(100vh - 120px);
+            background-image: url("../../../assets/image/background.png");
+            background-repeat: repeat;
+            opacity: 0.4;
+            pointer-events: none;
+            position: absolute;
+            top: 60px;
+        }
+        .send-mensage {
+            width: 100%;
+            display: flex;
+            padding: 5px 20px;
+            box-sizing: border-box;
+            .balloon-mensage {
+                background-color: #d9fdd3;
+                box-shadow: 0 1px 0.5px rgba(11, 20, 26, 0.13);
+                width: fit-content;
+                color: #111b21;
+                border-top-right-radius: 0;
+                border-radius: 7.5px;
+                font-size: 14.2px;
+                line-height: 19px;
+                font-family: system-ui;
+                padding: 5px 10px;
+                margin-left: auto;
+                .member {
+                    display: none;
+                }
+            }
+        }
+        .received-mensage {
+            width: 100%;
+            display: flex;
+            padding: 5px 20px;
+            box-sizing: border-box;
+            .balloon-mensage {
+                .member {
+                    color: #00a884;
+                    font-weight: 500;
+                }
+                background-color: white;
+                box-shadow: 0 1px 0.5px rgba(11, 20, 26, 0.13);
+                width: fit-content;
+                color: #111b21;
+                border-top-right-radius: 0;
+                border-radius: 7.5px;
+                font-size: 14.2px;
+                line-height: 19px;
+                font-family: system-ui;
+                padding: 5px 10px;
+            }
+        }
+    }
+    .chat-content-bottom {
+        width: 100%;
+        height: 60px;
+        background-color: #f0f2f5;
+        display: flex;
+        flex: 1;
+        align-items: center;
+        input {
+            font-family: system-ui;
+            padding: 11px 12px 11px 18px;
+            border-radius: 8px;
+            border: 0;
+            flex: 1 1 auto;
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 20px;
+            outline: none;
+            will-change: width;
+            vertical-align: initial;
+            margin: 18px 9px 18px 18px;
+            color: #111b21;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+            outline: none;
+        }
+        button {
+            display: contents;
+            svg {
+                opacity: 0.9;
+                color: #54656f;
+                padding: 18px 18px 18px 9px;
+                cursor: pointer;
+            }
+        }
+    }
+}
