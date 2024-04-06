@@ -1,0 +1,82 @@
+{
+    // For more information, visit: https://go.microsoft.com/fwlink/?LinkId=733558
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "ShellStart",
+            "type": "shell",
+            "command": "ng serve",
+            "isBackground": true,
+            "problemMatcher": {
+                "owner": "typescript",
+                "pattern": "$tsc",
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": {
+                        "regexp": "(.*?)"
+                    },
+                    "endsPattern": {
+                        "regexp": "bundle generation complete"
+                    }
+                }
+            },
+            "options": {
+                "cwd": "${workspaceFolder}/shell"
+            },
+            "presentation": {
+                "group": "ShellProjectsGroup"
+            }
+        },
+        {
+            "label": "MicroFrontendStart",
+            "type": "npm",
+            "script": "start",
+            "isBackground": true,
+            "problemMatcher": {
+                "owner": "typescript",
+                "pattern": "$tsc",
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": {
+                        "regexp": "(.*?)"
+                    },
+                    "endsPattern": {
+                        "regexp": "bundle generation complete"
+                    }
+                }
+            },
+            "options": {
+                "cwd": "${workspaceFolder}/micro-frontend"
+            },
+            "presentation": {
+                "group": "ShellProjectsGroup"
+            }
+        },
+        {
+            "label": "ExecuteShellProjects",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "ShellStart",
+                "MicroFrontendStart"
+            ]
+        },
+        {
+            "type": "npm",
+            "script": "test",
+            "isBackground": true,
+            "problemMatcher": {
+                "owner": "typescript",
+                "pattern": "$tsc",
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": {
+                        "regexp": "(.*?)"
+                    },
+                    "endsPattern": {
+                        "regexp": "bundle generation complete"
+                    }
+                }
+            }
+        }
+    ]
+}

@@ -64,6 +64,7 @@
 							"src/assets"
 						],
 						"styles": [
+							"node_modules/bootstrap/dist/css/bootstrap.css",
 							"src/styles.scss"
 						],
 						"scripts": []
@@ -86,6 +87,7 @@
 							"src/assets"
 						],
 						"styles": [
+							"node_modules/bootstrap/dist/css/bootstrap.css",
 							"src/styles.scss"
 						],
 						"scripts": []
